@@ -1,0 +1,10 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "餐厅盘点统一云函数入口",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "wx-server-sdk": "latest"
+  }
+}

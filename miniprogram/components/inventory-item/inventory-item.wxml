@@ -1,0 +1,15 @@
+<view class="glass-card item" bindtap="onTapItem">
+  <view class="avatar">{{name ? name[0] : '?'}}</view>
+
+  <view class="content">
+    <view class="name">{{name || '未命名品项'}}</view>
+    <view class="note">{{note || '暂无备注'}}</view>
+  </view>
+
+  <view class="right">
+    <view class="qty">{{quantity}}</view>
+    <view class="status-pill {{status === 'low' ? 'low' : 'ok'}}">
+      {{status === 'low' ? '不足' : '充足'}}
+    </view>
+  </view>
+</view>

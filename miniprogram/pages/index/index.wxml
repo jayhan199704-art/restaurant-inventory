@@ -1,0 +1,38 @@
+<view class="container index-page">
+  <view class="time-text">{{currentDateTime}}</view>
+
+  <view class="cards-row">
+    <view class="glass-card data-card">
+      <view class="card-title">今日已录入</view>
+      <view class="card-value">{{totalTodayCount}}</view>
+      <view class="card-unit">品项</view>
+    </view>
+
+    <view class="glass-card data-card">
+      <view class="card-title">库存不足</view>
+      <view class="card-value danger">{{lowStockCount}}</view>
+      <view class="card-unit">品项</view>
+    </view>
+  </view>
+
+  <view class="section-title">最近录入</view>
+  <view wx:if="{{recentRecords.length === 0}}" class="glass-card empty-card">今日暂无录入记录</view>
+
+  <block wx:for="{{recentRecords}}" wx:key="_id">
+    <inventory-item
+      id="{{item._id}}"
+      name="{{item.name}}"
+      quantity="{{item.quantity}}"
+      note="{{item.note}}"
+      status="{{item.status}}"
+      bind:itemtap="onTapRecord"
+    />
+  </block>
+
+  <view class="fab-tabbar">
+    <view class="item active" bindtap="goHome">首页</view>
+    <view class="item" bindtap="goStats">统计</view>
+    <button class="fab-btn" bindtap="goAdd">+</button>
+    <view class="item" bindtap="goSettings">设置</view>
+  </view>
+</view>
