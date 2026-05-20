@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="title">系统配置</view>
+  <view class="glass-card panel">
+    <view>数据库集合：{{collectionName}}</view>
+    <view>云函数入口：{{cloudFunc}}</view>
+    <view>主题色：#6482f0</view>
+  </view>
+
+  <view class="fab-tabbar">
+    <view class="item" bindtap="goHome">首页</view>
+    <view class="item" bindtap="goStats">统计</view>
+    <button class="fab-btn" bindtap="goAdd">+</button>
+    <view class="item active" bindtap="goSettings">设置</view>
+  </view>
+</view>

@@ -1,0 +1,72 @@
+<view class="page">
+  <view class="halo halo-a"></view>
+  <view class="halo halo-b"></view>
+  <view class="halo halo-c"></view>
+
+  <view class="container add-container">
+    <view class="header-row">
+      <view class="back-btn" bindtap="onBack">← 返回</view>
+      <view class="page-title">{{isEditMode ? '编辑盘点项目' : '添加盘点项目'}}</view>
+    </view>
+
+    <view class="glass-card field-card photo-card" bindtap="chooseImage">
+      <block wx:if="{{imageUrl}}">
+        <image class="preview" src="{{imageUrl}}" mode="aspectFill" />
+        <view class="photo-tip">点击重新拍摄/选择</view>
+      </block>
+      <block wx:else>
+        <view class="camera-icon">📷</view>
+        <view class="photo-tip">拍照 / 从相册选择</view>
+      </block>
+    </view>
+
+    <view wx:if="{{loading}}" class="glass-card ai-loading">
+      <loading size="20" color="#6482f0" />
+      <text>AI 识别中...</text>
+    </view>
+
+    <view class="glass-card field-card">
+      <view class="field-head">
+        <text class="field-label">名称</text>
+        <text wx:if="{{isAIName}}" class="ai-tag">AI</text>
+      </view>
+      <input
+        class="field-input"
+        placeholder="请输入食材/物品名称"
+        value="{{form.name}}"
+        data-key="name"
+        bindinput="onInput"
+      />
+    </view>
+
+    <view class="glass-card field-card">
+      <view class="field-head">
+        <text class="field-label">数量</text>
+        <text wx:if="{{isAIQuantity}}" class="ai-tag">AI</text>
+      </view>
+      <input
+        class="field-input"
+        type="number"
+        placeholder="请输入数量"
+        value="{{form.quantity}}"
+        data-key="quantity"
+        bindinput="onInput"
+      />
+    </view>
+
+    <view class="glass-card field-card">
+      <view class="field-head">
+        <text class="field-label">备注</text>
+      </view>
+      <textarea
+        class="field-textarea"
+        placeholder="选填，如：已清洗、待补货"
+        value="{{form.note}}"
+        data-key="note"
+        bindinput="onInput"
+      />
+    </view>
+
+    <button class="save-btn" bindtap="save">保存记录</button>
+  </view>
+</view>

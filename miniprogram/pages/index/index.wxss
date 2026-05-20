@@ -1,0 +1,56 @@
+.index-page {
+  padding-bottom: 120rpx;
+}
+
+.time-text {
+  font-size: 28rpx;
+  color: #4b4b4b;
+  margin-bottom: 22rpx;
+}
+
+.cards-row {
+  display: flex;
+  gap: 18rpx;
+  margin-bottom: 26rpx;
+}
+
+.data-card {
+  flex: 1;
+  padding: 24rpx;
+}
+
+.card-title {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.card-value {
+  margin-top: 10rpx;
+  font-size: 72rpx;
+  line-height: 1;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.card-value.danger {
+  color: #e14f4f;
+}
+
+.card-unit {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin: 14rpx 0 18rpx;
+}
+
+.empty-card {
+  padding: 24rpx;
+  color: #666;
+  font-size: 26rpx;
+  margin-bottom: 18rpx;
+}
